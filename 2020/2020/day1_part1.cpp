@@ -6,7 +6,9 @@
 
 int solution_1_1(void) {
   std::ifstream infile("1.txt");
-  std::vector<int> inputs(200);
+  // Initially doing std::vector<int> inputs(200) caused later pointless iterations where our value was just the default 0
+  std::vector<int> inputs;
+  inputs.reserve(200);
 
   int result;
   int current;

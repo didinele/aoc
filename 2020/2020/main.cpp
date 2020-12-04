@@ -8,7 +8,7 @@ int main(int argc, char* argv[])
 {
   solution_1_1();
   Solution solutions[2][31] = {
-    { solution_1_1 }
+    { solution_1_1, solution_1_2 }
   };
 
   if (argc < 3) {

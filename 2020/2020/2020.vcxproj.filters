@@ -21,6 +21,9 @@
     <ClCompile Include="day1_part1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="day2_part2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
