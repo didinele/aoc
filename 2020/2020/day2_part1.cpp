@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 
-long long int solution_2_2(void)
+long long int solution_2_1(void)
 {
   std::ifstream infile("2.txt");
   std::string line;
@@ -11,10 +11,10 @@ long long int solution_2_2(void)
   // Each line will have 3 individual "components", so when i reaches 3, we know we've reached the next input
   int i = 0;
 
-  int positions[2];
-  bool former = false;
-  bool latter = false;
+  int min;
+  int max;
   char letter;
+  int count = 0;
 
   while (infile >> line) {
     // We're dealing with min-max pairs.
@@ -22,7 +22,7 @@ long long int solution_2_2(void)
       std::string construct;
       for (char c : line) {
         if (c == '-') {
-          positions[0] = std::stoi(construct);
+          min = std::stoi(construct);
           construct = "";
         }
         else {
@@ -30,7 +30,7 @@ long long int solution_2_2(void)
         }
       }
 
-      positions[1] = std::stoi(construct);
+      max = std::stoi(construct);
       i++;
     }
     else if (i == 1) {
@@ -38,15 +38,14 @@ long long int solution_2_2(void)
       i++;
     }
     else if (i == 2) {
-      char formerChar = line[positions[0] - 1];
-      char latterChar = line[positions[1] - 1];
+      for (char c : line) {
+        if (c == letter) count++;
+      }
 
-      if (
-        (formerChar == letter && latterChar != letter) ||
-        (formerChar != letter && latterChar == letter)
-      ) valid++;
+      if (count >= min && count <= max) valid++;
 
       i = 0;
+      count = 0;
     }
   }
 

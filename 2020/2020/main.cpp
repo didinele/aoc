@@ -2,13 +2,14 @@
 #include <sstream>
 #include "main.h"
 
-typedef int(*Solution)();
+typedef long long int(*Solution)();
 
 int main(int argc, char* argv[])
 {
-  solution_1_1();
-  Solution solutions[2][31] = {
-    { solution_1_1, solution_1_2 }
+  Solution solutions[31][2] = {
+    { solution_1_1, solution_1_2 },
+    { solution_2_1, solution_2_2 },
+    { solution_3_1, solution_3_2 }
   };
 
   if (argc < 3) {

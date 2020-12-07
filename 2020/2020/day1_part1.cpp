@@ -1,10 +1,10 @@
 #include "main.h"
-#include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
 
-int solution_1_1(void) {
+long long int solution_1_1(void)
+{
   std::ifstream infile("1.txt");
   // Initially doing std::vector<int> inputs(200) caused later pointless iterations where our value was just the default 0
   std::vector<int> inputs;
