@@ -38,12 +38,12 @@ long long int solution_2_2(void)
       i++;
     }
     else if (i == 2) {
-      char formerChar = line[positions[0] - 1];
-      char latterChar = line[positions[1] - 1];
+      char former_char = line[positions[0] - 1];
+      char latter_char = line[positions[1] - 1];
 
       if (
-        (formerChar == letter && latterChar != letter) ||
-        (formerChar != letter && latterChar == letter)
+        (former_char == letter && latter_char != letter) ||
+        (former_char != letter && latter_char == letter)
       ) valid++;
 
       i = 0;

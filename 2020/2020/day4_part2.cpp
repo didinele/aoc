@@ -8,7 +8,15 @@ class Passport
 private:
   std::string raw;
 
-  bool inputIsValid() {
+  int byr;
+  int iyr;
+  int eyr;
+  std::string hgt;
+  std::string hcl;
+  std::string ecl;
+  std::string pid;
+
+  bool input_is_valid() {
     using std::string;
     std::string value = this->raw;
     return value.find("byr:") != string::npos
@@ -45,28 +53,13 @@ private:
   }
 
 public:
-  int byr;
-  int iyr;
-  int eyr;
-  std::string hgt;
-  std::string hcl;
-  std::string ecl;
-  std::string pid;
-
-  int getRawLength() {
+  int get_raw_length() {
     return this->raw.length();
-  }
-
-  Passport(): raw("") {}
-
-  Passport(std::string& input) {
-    this->raw = input;
-    if (this->inputIsValid()) this->update();
   }
 
   Passport& operator+=(const std::string& str) {
     this->raw += str;
-    if (this->inputIsValid()) this->update();
+    if (this->input_is_valid()) this->update();
     return *this;
   }
 
@@ -95,7 +88,7 @@ public:
       }
     }
 
-    return this->inputIsValid()
+    return this->input_is_valid()
       && (this->byr >= 1920 && this->byr <= 2002)
       && (this->iyr >= 2010 && this->iyr <= 2020)
       && (this->eyr >= 2020 && this->eyr <= 2030)
@@ -122,7 +115,7 @@ long long int solution_4_2(void)
       continue;
     }
 
-    passport += (passport.getRawLength() == 0 ? "" : " ") + line;
+    passport += (passport.get_raw_length() == 0 ? "" : " ") + line;
   }
 
   if (passport.isValid()) valid++;
