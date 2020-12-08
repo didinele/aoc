@@ -9,7 +9,8 @@ int main(int argc, char* argv[])
   Solution solutions[31][2] = {
     { solution_1_1, solution_1_2 },
     { solution_2_1, solution_2_2 },
-    { solution_3_1, solution_3_2 }
+    { solution_3_1, solution_3_2 },
+    { solution_4_1, solution_4_2 }
   };
 
   if (argc < 3) {

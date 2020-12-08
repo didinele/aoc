@@ -8,3 +8,5 @@ Solution(2, 1);
 Solution(2, 2);
 Solution(3, 1);
 Solution(3, 2);
+Solution(4, 1);
+Solution(4, 2);
